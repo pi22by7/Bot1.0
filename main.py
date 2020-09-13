@@ -1,7 +1,10 @@
 import os
 from discord.ext import commands
 import asyncio
+from dotenv import load_dotenv
 
+load_dotenv()
+token = os.getenv('DISCORD_TOKEN')
 bot = commands.Bot(command_prefix='.')
 owner = ["ππ#0857"]
 
@@ -43,4 +46,4 @@ async def logoff(ctx):
         await ctx.send("Only the bot owner can log me out.")
 
 
-bot.run("NzMxNDEyMjcyNTA0NjM1NDIy.Xwn9fQ.7301GsfLSn_0DxMyRxmTIFmqBQo")
+bot.run(token)
